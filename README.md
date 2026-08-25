@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # admen_app
 
 A new Flutter project.
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# admin_app
+this app connection with ecommerc_app and delivery_app and this application spechalized to maneger in database
+>>>>>>> e16bbe765be76a395ca43b23db1ced6526b3b84b
