@@ -5,8 +5,8 @@ ThemeData themeEnglish = ThemeData(
         fontFamily: "playfairDisplay",     
         floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: Appcolor.primaryColor),
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.grey[50], 
-          titleTextStyle:TextStyle(color: Appcolor.primaryColor , fontWeight: FontWeight.bold , fontSize: 25),
+          backgroundColor: Appcolor.primaryColor, 
+          titleTextStyle:TextStyle(color: Colors.white, fontWeight: FontWeight.bold , fontSize: 25),
           centerTitle: true,
           elevation: 0,
         ),

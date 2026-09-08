@@ -1,6 +1,6 @@
 class AppImagesset {
-  static const String rootImages = "assete/images";
-  static const String rootLottie = "assete/lottie";
+  static const String rootImages = "assets/images";
+  static const String rootLottie = "assets/lottie";
   static const String loading = "$rootLottie/Soft ui loader.json";
   static const String offline = "$rootLottie/Data Center Blue Orange.json";
   static const String noData = "$rootLottie/nodata.json";

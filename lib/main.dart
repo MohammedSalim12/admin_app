@@ -1,6 +1,15 @@
+import 'package:admen_app/bindeing/Initialbinding.dart';
+import 'package:admen_app/core/localization/changelocal_controller.dart';
+import 'package:admen_app/core/localization/tranzlation.dart';
+import 'package:admen_app/core/services/myservices.dart';
+import 'package:admen_app/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-void main() {
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await inititalServices();
   runApp(const MyApp());
 }
 
@@ -9,9 +18,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: Text("data"),
+    Localecontroller controller = Get.put(Localecontroller ());
+    return GetMaterialApp(
+      translations: MyTranzalion(),
+      initialBinding: Initialbinding(),
+      locale: controller.language,
+      theme: controller.apptheme,
+      debugShowCheckedModeBanner: false,
+      getPages: routes,
     );
   }
 }
