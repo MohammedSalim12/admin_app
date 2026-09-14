@@ -32,64 +32,63 @@ class CategoresView extends StatelessWidget {
               child: ListView.builder(
                 itemCount: controller.data.length,
                 itemBuilder: (context, index) {
-                  return Card(
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 2,
-                          child: Container(
-                            padding: EdgeInsets.all(5),
-                            child: CachedNetworkImage(
-                              imageUrl:
-                                  "${Applink.imagescategories}/${controller.data[index].categoriesImage}",
+                  return InkWell(
+                    onTap: () {
+                      controller.goTOPageEdit(controller.data[index]);
+                    },
+                    child: Card(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 2,
+                            child: Container(
+                              padding: EdgeInsets.all(5),
+                              child: CachedNetworkImage(
+                                imageUrl:
+                                    "${Applink.imagescategories}/${controller.data[index].categoriesImage}",
+                              ),
                             ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 4,
-                          child: ListTile(
-                            trailing: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                IconButton(
-                                  onPressed: () {
-                                    Get.defaultDialog(
-                                      title: "Warning",
-                                      middleText: "هل انت متاكد من الحذف ؟",
-                                      onCancel: () {},
-                                      onConfirm: () {
-                                        controller.deleteCategories(
-                                          controller.data[index].categoriesId!,
-                                          controller
-                                              .data[index]
-                                              .categoriesImage!,
-                                        );
-                                        Get.back();
-                                      },
-                                    );
-                                  },
-                                  icon: Icon(Icons.delete),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    controller.goTOPageEdit(
-                                      controller.data[index],
-                                    );
-                                  },
-                                  icon: Icon(Icons.edit),
-                                ),
-                              ],
-                            ),
-                            subtitle: Text(
-                              controller.data[index].categoriesDatetime!,
-                            ),
-                            title: Text(
-                              controller.data[index].categoriesName!,
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                          Expanded(
+                            flex: 4,
+                            child: ListTile(
+                              trailing: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  IconButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                        title: "Warning",
+                                        middleText: "هل انت متاكد من الحذف ؟",
+                                        onCancel: () {},
+                                        onConfirm: () {
+                                          controller.deleteCategories(
+                                            controller
+                                                .data[index]
+                                                .categoriesId!,
+                                            controller
+                                                .data[index]
+                                                .categoriesImage!,
+                                          );
+                                          Get.back();
+                                        },
+                                      );
+                                    },
+                                    icon: Icon(Icons.delete),
+                                  ),
+                                ],
+                              ),
+                              subtitle: Text(
+                                controller.data[index].categoriesDatetime!,
+                              ),
+                              title: Text(
+                                controller.data[index].categoriesName!,
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },

@@ -19,5 +19,6 @@ class Applink {
 
 
   static const String imagescategories = "$imagestatic/categories";
+  static const String imagesitems = "$imagestatic/items"; 
 
 }

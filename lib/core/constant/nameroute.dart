@@ -6,4 +6,8 @@ class Approutes {
   static const String categoresview = "/categoresview";
   static const String categoresadd = "/categoresadd";
   static const String categoresedit = "/categoresedit";
+  //  items
+  static const String itemsadd = "/itemsadd";
+  static const String itemsview = "/itemsview";
+  static const String itemsedit = "/itemsedit";
 }

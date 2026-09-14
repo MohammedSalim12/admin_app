@@ -49,7 +49,9 @@ class Homepage extends StatelessWidget {
               Cardadmin(
                 text: "items",
                 image: AppImagesset.avatar,
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(Approutes.itemsview);
+                },
               ),
               Cardadmin(
                 text: "Notification",
